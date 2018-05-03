@@ -10,9 +10,10 @@ class Album extends Component {
     });
 
     this.state = {
-      album: album
+        album: album
     };
   }
+
 
   render() {
     return (
@@ -25,6 +26,7 @@ class Album extends Component {
             <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
         </section>
+      <section className="songs">
         <table id="song-list">
           <colgroup>
             <col id="song-number-column" />
@@ -32,12 +34,26 @@ class Album extends Component {
             <col id="song-duration-colum" />
           </colgroup>
           <tbody>
+            {
+              this.state.album.songs.map( (song, index) =>
+              <tr className="song" key={index}>
+                <td className="song-number">{index + 1}
+                  </td>
+                <td className="song-title">{song.title}</td>
+                <td className="song-duration">{(song.duration / 60).toFixed(2) + " mins"}</td>
+                <td>
+                <span className="ion-play"></span>
+                <span className="ion-pause"></span>
+                </td>
+                </tr>
+              )
+            }
           </tbody>
         </table>
+        </section>
       </section>
     );
   }
 }
-
 
 export default Album;
