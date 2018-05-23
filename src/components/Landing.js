@@ -1,14 +1,23 @@
 import React from 'react';
 import './Landing.css';
-import {Parallax, Icon, Row, Col} from 'react-materialize';
+import {Button, Parallax, Icon, Row, Col} from 'react-materialize';
 
 const Landing = () => (
   <div>
   <header>
   <h1>Welcome to Bloc Jams</h1>
   </header>
-  <Parallax className="parallax-landing" imageSrc="/assets/images/electric-guitar-hands.jpg"/>
+
+  <section class="parallax-image">
+  <span class="cta-header">Start Listening</span>
+  <a href="/library" class="cta" large>
+  <Icon medium>play_arrow</Icon>
+  </a>
+  </section>
+
+
     <section className="landing">
+
     <h1 className="hero-title">Turn the music up!</h1>
   <section className="selling-points">
     <Row>

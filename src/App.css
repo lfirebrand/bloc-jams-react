@@ -1,7 +1,12 @@
 .App {
   text-align: center;
 }
-
+body {
+  font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
 nav {
     height: 75px;
     line-height: 75px;
