@@ -1,6 +1,6 @@
 import React from 'react';
 import './Landing.css';
-import {Button, Parallax, Icon, Row, Col} from 'react-materialize';
+import {Icon, Row, Col} from 'react-materialize';
 
 const Landing = () => (
   <div>
