@@ -86,11 +86,15 @@ class Album extends Component {
       const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
       const newIndex = Math.max(0, currentIndex + 1);
       const newSong = this.state.album.songs[newIndex];
+
+      if (newIndex < this.state.album.songs.length) {
       this.setSong(newSong);
       this.play();
-      if (newIndex > this.state.album.songs.length - 1)
-        return;
+    } else {
+      this.setSong(this.state.album.songs[0]);
+      this.play();
     }
+  }
 
     handleTimeChange(e) {
       const newTime = this.audioElement.duration * e.target.value;
@@ -149,11 +153,10 @@ class Album extends Component {
                 </td>
                 <td className="song-title" data-title="Song">{song.title}</td>
                 <td className="song-duration" data-title="Duration">{this.formatTime(song.duration)}</td>
-                <button class="waves-effect waves-light btn">
-                <Icon small>play_arrow</Icon>
-                <Icon small>pause</Icon>
+                <button className={this.state.isPlaying && this.state.currentSong === song ? 'waves-effect waves-light btn btn-active' : 'waves-effect waves-light btn'}>
+                <Icon small>{this.state.isPlaying && this.state.currentSong === song ? 'pause' : 'play_arrow'}</Icon>
                 </button>
-                </tr>
+              </tr>
               )
             }
           </tbody>

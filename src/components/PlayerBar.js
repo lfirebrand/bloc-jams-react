@@ -10,7 +10,7 @@ class PlayerBar extends Component {
           <button id="previous" class="waves-effect waves-light btn" onClick={this.props.handlePrevClick}>
             <Icon>skip_previous</Icon>
           </button>
-          <button id="play-pause" class="waves-effect waves-light btn" onClick={this.props.handleSongClick}>
+          <button id="play-pause" className={this.props.isPlaying ? "waves-effect waves-light btn btn-active" : "waves-effect waves-light btn"} onClick={this.props.handleSongClick}>
 
             <Icon>{this.props.isPlaying ? 'pause' : 'play_arrow'}</Icon>
           </button>

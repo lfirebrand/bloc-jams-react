@@ -26,6 +26,10 @@
 .btn{
   background-color: #e91e63
 }
-.btn:hover {
-  background-color: #880e4f
+
+.btn-active {
+  background-color: #ed4a82 !important
+}
+.btn:hover, .btn:active, .btn:focus {
+  background: #eb3472 !important
 }
