@@ -1,24 +1,42 @@
 import React from 'react';
+import './Landing.css';
+import {Parallax, Icon, Row, Col} from 'react-materialize';
 
 const Landing = () => (
-  <section className="landing">
+  <div>
+  <header>
+  <h1>Welcome to Bloc Jams</h1>
+  </header>
+  <Parallax className="parallax-landing" imageSrc="/assets/images/electric-guitar-hands.jpg"/>
+    <section className="landing">
     <h1 className="hero-title">Turn the music up!</h1>
-
   <section className="selling-points">
+    <Row>
     <div className="point">
-      <h2 className="point-title">Choose your music</h2>
-      <p className="point-description">The world is full of music; why should you have to listen to music that someone else chose?</p>
+      <Col s={4}>
+      <Icon large>music_note</Icon>
+      <h4 className="point-title">Choose your music</h4>
+      <p className="point-description grey-text text-darken-3 lighten-3">The world is full of music; why should you have to listen to music that someone else chose?</p>
+      </Col>
       </div>
     <div className="point">
-      <h2 className="point-title">Unlimited, streaming, ad-free</h2>
+      <Col s={4}>
+      <Icon large>not_interested</Icon>
+      <h4 className="point-title">Unlimited, streaming, ad-free</h4>
       <p className="point-description">No arbitrary limits. No distractions.</p>
+      </Col>
     </div>
     <div className="point">
-      <h2 className="point-title">Mobile enabled.</h2>
+      <Col s={4}>
+      <Icon large>mobile_friendly</Icon>
+      <h4 className="point-title">Mobile enabled</h4>
       <p className="point-description">Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
+      </Col>
     </div>
-  </section>
-  </section>
+    </Row>
+    </section>
+    </section>
+  </div>
 );
 
 export default Landing;

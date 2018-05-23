@@ -1,0 +1,31 @@
+
+#time-control {
+  width: 560px;
+  margin: auto;
+}
+
+#volume-control {
+  width: auto;
+  margin: auto;
+}
+
+#volume-control table {
+  width: 625px;
+  margin: auto;
+}
+
+#volume-control td {
+  padding: 0px;
+  text-align: center;
+}
+
+#buttons {
+  margin-top: 20px;
+}
+
+.btn{
+  background-color: #e91e63
+}
+.btn:hover {
+  background-color: #880e4f
+}

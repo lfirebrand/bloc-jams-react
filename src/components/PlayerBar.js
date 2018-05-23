@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
+import './PlayerBar.css';
+import {Icon} from 'react-materialize';
 
 class PlayerBar extends Component {
   render() {
     return (
       <section className="player-bar">
         <section id="buttons">
-          <button id="previous" onClick={this.props.handlePrevClick}>
-            <span className="ion-skip-backward"></span>
+          <button id="previous" class="waves-effect waves-light btn" onClick={this.props.handlePrevClick}>
+            <Icon>skip_previous</Icon>
           </button>
-          <button id="play-pause" onClick={this.props.handleSongClick}>
+          <button id="play-pause" class="waves-effect waves-light btn" onClick={this.props.handleSongClick}>
 
-            <span className={this.props.isPlaying ? 'ion-pause' : 'ion-play'}></span>
+            <Icon>{this.props.isPlaying ? 'pause' : 'play_arrow'}</Icon>
           </button>
-          <button id="next" onClick={this.props.handleNextClick}>
-            <span className="ion-skip-forward"></span>
+          <button id="next" class="waves-effect waves-light btn" onClick={this.props.handleNextClick}>
+            <Icon>skip_next</Icon>
           </button>
+        <br></br>
         </section>
         <section id="time-control">
           <div className="current-time">{this.props.formatTime}</div>
@@ -29,8 +32,14 @@ class PlayerBar extends Component {
           />
         <div className="total-time">{this.props.formatDuration}</div>
         </section>
+        <br></br>
         <section id="volume-control">
-          <div className="icon ion-volume-low">{this.props.volume}</div>
+          <table>
+          <tr>
+          <td>
+          <Icon>volume_down</Icon>
+          </td>
+          <td>
           <input
             type="range"
             className="seek-bar"
@@ -40,7 +49,12 @@ class PlayerBar extends Component {
             step="0.1"
             onChange={this.props.handleVolumeChange}
             />
-          <div className="icon ion-volume-high"></div>
+          </td>
+          <td>
+          <Icon>volume_up</Icon>
+          </td>
+          </tr>
+        </table>
         </section>
       </section>
     );

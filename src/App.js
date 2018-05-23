@@ -4,17 +4,21 @@ import './App.css';
 import Landing from './components/Landing';
 import Library from './components/Library';
 import Album from './components/Album';
+import {Navbar, NavItem, Icon} from 'react-materialize';
+
+var Logo = <img src={"/assets/images/bloc_jams_logo.png"} />
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header>
-          <nav>
-            <Link to='/'>Landing</Link>
-            <Link to='/library'>Library</Link>
+          <nav class="lime">
+          <Navbar brand={Logo} right>
+            <NavItem href="/"><Icon>home</Icon></NavItem>
+            <NavItem href="/library"><Icon>library_music</Icon></NavItem>
+          </Navbar>
           </nav>
-          <h1>Bloc Jams</h1>
         </header>
         <main>
           <Route exact path="/" component={Landing} />

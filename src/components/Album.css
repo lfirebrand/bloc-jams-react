@@ -1,0 +1,23 @@
+.album {
+  font-family: 'Roboto', sans-serif;
+}
+
+.album img {
+  margin-top: 30px;
+  width: auto;
+  height: auto;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.album > a {
+  padding-top: 20px;
+  margin: 20px;
+  position: relative;
+}
+
+.album table {
+  width: 560px;
+  font-family: 'Roboto', sans-serif;
+  margin: auto;
+}

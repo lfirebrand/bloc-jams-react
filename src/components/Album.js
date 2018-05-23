@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import './Album.css';
+import {Icon} from 'react-materialize';
 
 class Album extends Component {
   constructor(props) {
@@ -120,32 +122,37 @@ class Album extends Component {
       <section className="album">
         <section id="album-info">
           <img id="album-cover-art" src={this.state.album.albumCover} />
-          <div className="album-details">
-            <h1 id="album-title">{this.state.album.title}</h1>
-            <h2 className="artist">{this.state.album.artist}</h2>
-            <div id="release-info">{this.state.album.releaseInfo}</div>
-          </div>
+            <h2 id="album-title">{this.state.album.title}</h2>
+            <h4 className="artist">{this.state.album.artist}</h4>
+            <div id="release-info"><p>{this.state.album.releaseInfo}</p></div>
         </section>
       <section className="songs">
-        <table id="song-list">
+        <table id="song-list" class="responsive-table">
           <colgroup>
             <col id="song-number-column" />
             <col id="song-title-column" />
             <col id="song-duration-colum" />
           </colgroup>
+          <thead>
+            <tr>
+              <th>Track</th>
+              <th>Song</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
           <tbody>
             {
               this.state.album.songs.map( (song, index) =>
               <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
                 <td className="song-actions">
-                  <button>
-                  <span className="song-number">{index + 1}</span>
-                  <span className="ion-play"></span>
-                  <span className="ion-pause"></span>
-                  </button>
+                  <span className="song-number" data-title="Track Number">{index + 1}</span>
                 </td>
-                <td className="song-title">{song.title}</td>
-                <td className="song-duration">{this.formatTime(song.duration)}</td>
+                <td className="song-title" data-title="Song">{song.title}</td>
+                <td className="song-duration" data-title="Duration">{this.formatTime(song.duration)}</td>
+                <button class="waves-effect waves-light btn">
+                <Icon small>play_arrow</Icon>
+                <Icon small>pause</Icon>
+                </button>
                 </tr>
               )
             }
