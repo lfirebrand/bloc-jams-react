@@ -131,7 +131,7 @@ class Album extends Component {
             <div id="release-info"><p>{this.state.album.releaseInfo}</p></div>
         </section>
       <section className="songs">
-        <table id="song-list" class="responsive-table">
+        <table id="song-list" className="responsive-table">
           <colgroup>
             <col id="song-number-column" />
             <col id="song-title-column" />
@@ -153,9 +153,11 @@ class Album extends Component {
                 </td>
                 <td className="song-title" data-title="Song">{song.title}</td>
                 <td className="song-duration" data-title="Duration">{this.formatTime(song.duration)}</td>
+                <td>
                 <button className={this.state.isPlaying && this.state.currentSong === song ? 'waves-effect waves-light btn btn-active' : 'waves-effect waves-light btn'}>
                 <Icon small>{this.state.isPlaying && this.state.currentSong === song ? 'pause' : 'play_arrow'}</Icon>
                 </button>
+                </td>
               </tr>
               )
             }

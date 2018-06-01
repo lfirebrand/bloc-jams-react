@@ -8,9 +8,9 @@ const Landing = () => (
   <h1>Welcome to Bloc Jams</h1>
   </header>
 
-  <section class="parallax-image">
-  <span class="cta-header">Start Listening</span>
-  <a href="/library" class="cta" large>
+  <section className="parallax-image">
+  <span className="cta-header">Start Listening</span>
+  <a href="/library" className="cta">
   <Icon medium>play_arrow</Icon>
   </a>
   </section>

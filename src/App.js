@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <nav class="lime">
+          <nav className="lime">
           <Navbar brand={Logo} right>
             <NavItem href="/"><Icon>home</Icon></NavItem>
             <NavItem href="/library"><Icon>library_music</Icon></NavItem>

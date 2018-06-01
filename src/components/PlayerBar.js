@@ -7,14 +7,14 @@ class PlayerBar extends Component {
     return (
       <section className="player-bar">
         <section id="buttons">
-          <button id="previous" class="waves-effect waves-light btn" onClick={this.props.handlePrevClick}>
+          <button id="previous" className="waves-effect waves-light btn" onClick={this.props.handlePrevClick}>
             <Icon>skip_previous</Icon>
           </button>
           <button id="play-pause" className={this.props.isPlaying ? "waves-effect waves-light btn btn-active" : "waves-effect waves-light btn"} onClick={this.props.handleSongClick}>
 
             <Icon>{this.props.isPlaying ? 'pause' : 'play_arrow'}</Icon>
           </button>
-          <button id="next" class="waves-effect waves-light btn" onClick={this.props.handleNextClick}>
+          <button id="next" className="waves-effect waves-light btn" onClick={this.props.handleNextClick}>
             <Icon>skip_next</Icon>
           </button>
         <br></br>
@@ -35,6 +35,7 @@ class PlayerBar extends Component {
         <br></br>
         <section id="volume-control">
           <table>
+          <tbody>
           <tr>
           <td>
           <Icon>volume_down</Icon>
@@ -54,6 +55,7 @@ class PlayerBar extends Component {
           <Icon>volume_up</Icon>
           </td>
           </tr>
+          </tbody>
         </table>
         </section>
       </section>
